@@ -1,6 +1,5 @@
 import streamlit as st
 from pages.footer_all import base_footer 
-from backend import generate_signed_url
 from backend import generate_signed_url, svm_charts, tsi_plot
 
 
@@ -51,7 +50,7 @@ def citations_page():
 """, unsafe_allow_html=True)
 
     con = st.container(border=True)
-    con.write("### Cellular Localisation:")
+    con.write("### Cellular Localization:")
     con.write("CELLO v.2.5: subCELlular Localization predictor - http://cello.life.nctu.edu.tw/")
     con.write("(1) Yu CS, Lin CJ, Hwang JK: Predicting subcellular localization of proteins for Gram-negative bacteria by support vector machines based on n-peptide compositions. Protein Science 2004, 13:1402-1406.")
     con.write("(2) Yu CS, Chen YC, Lu CH, Hwang JK, Proteins: Structure, Function and Bioinformatics, 2006, 64:643-651.")
@@ -186,7 +185,7 @@ def glossary_page():
     return
 
 
-@st.cache_data(show_spinner=False)
+#@st.cache_data(show_spinner=False)
 def get_image_url(image_path):
     return generate_signed_url(image_path)
 
@@ -242,7 +241,7 @@ def meta_data_page():
 
 
 # ✅ Cache the video URL generation to avoid repeated calls
-@st.cache_data(show_spinner=False)
+#@st.cache_data(show_spinner=False)
 def get_video_url(video_path):
     return generate_signed_url(video_path)
 
@@ -306,7 +305,7 @@ def tutorials_page():
     return
 
 
-@st.cache_data(show_spinner=False)
+#@st.cache_data(show_spinner=False)
 def get_image_url(image_path):
     return generate_signed_url(image_path)
 
