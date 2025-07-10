@@ -639,17 +639,17 @@ def transcriptid_info(tid):
 
             con=st.container(border=True)
             with con:
-                st.subheader("Protein and Protein Protein Interaction data")
+                st.subheader("Protein Protein Interaction data")
                 show_protein_ppi_data(tid)
             
             con=st.container(border=True)
             with con:
-                st.subheader("Cellular Localization data")
+                st.subheader("Cellular-localization data")
                 show_cellular_Localization(tid)
 
             con=st.container(border=True)
             with con:
-                st.subheader("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes data")
+                st.subheader("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes Analysis data")
                 show_go_kegg_data(tid)
 
             con=st.container(border=True)
@@ -670,15 +670,15 @@ def transcriptid_info(tid):
                 st.subheader("lncRNA data")
                 show_lncrna_data(tid)
 
-                st.subheader("miRNA data")
+                st.subheader("miRNA Target")
                 show_mirna_data(tid)
 
             con=st.container(border=True)
             with con:
-                st.subheader("Orthologs data")
+                st.subheader("Orthologs")
                 show_orthologs_data(tid)
                 
-                st.subheader("Paralogs data")
+                st.subheader("Paralogs")
                 show_inparalogs_data(tid)
         else:
             st.error("Gene ID not found\n")
@@ -708,7 +708,7 @@ def multi_transcriptid_info(mtid):
 
         con=st.container(border=True)
         with con:
-            st.subheader("Protein and Protein Interaction data")
+            st.subheader("Protein Protein Interaction data")
             show_protein_ppi_data(found_ids, is_multi=True)
 
         con=st.container(border=True)
@@ -718,7 +718,7 @@ def multi_transcriptid_info(mtid):
 
         con=st.container(border=True)
         with con:
-            st.subheader("\nGene Ontology and Kyoto Encyclopedia of Genes and Genomes data")
+            st.subheader("\nGene Ontology and Kyoto Encyclopedia of Genes and Genomes Analysis data")
             show_go_kegg_data(found_ids, is_multi=True)
 
         con=st.container(border=True)
@@ -737,14 +737,14 @@ def multi_transcriptid_info(mtid):
             show_rna_data(found_ids, is_multi=True)
             st.subheader("lncRNA data")
             show_lncrna_data(found_ids, is_multi=True)
-            st.subheader("miRNA data")
+            st.subheader("miRNA Target")
             show_mirna_data(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("Orthologs data")
+            st.subheader("Orthologs")
             show_orthologs_data(found_ids, is_multi=True)
-            st.subheader("\nParalogs data")
+            st.subheader("\nParalogs")
             show_inparalogs_data(found_ids, is_multi=True)
     else:
         st.error("Gene ID not found\n")
