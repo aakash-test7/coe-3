@@ -364,8 +364,8 @@ def show_protein_ppi_data(tid, is_multi=False):
             st.write("No protein data found for any of the provided Gene IDs.\n")
             return False
 
-def show_cellular_localisation(tid, is_multi=False):
-    """Display cellular localisation data for transcript ID(s)."""
+def show_cellular_Localization(tid, is_multi=False):
+    """Display cellular Localization data for transcript ID(s)."""
     if not is_multi:
         cello_matching_row = cello_df[cello_df['Transcript id'] == tid]
         if not cello_matching_row.empty:
@@ -375,7 +375,7 @@ def show_cellular_localisation(tid, is_multi=False):
             st.write("\n")
             return True
         else:
-            st.write(f"No match found for Gene id: {tid} in Cellular Protein Localisation data\n")
+            st.write(f"No match found for Gene id: {tid} in Cellular Protein Localization data\n")
             return False
     else:
         result = pd.DataFrame()
@@ -390,7 +390,7 @@ def show_cellular_localisation(tid, is_multi=False):
             st.dataframe(result)
             return True
         else:
-            st.write("No cellular localisation data found for any of the provided Gene IDs.\n")
+            st.write("No cellular Localization data found for any of the provided Gene IDs.\n")
             return False
 
 def show_go_kegg_data(tid, is_multi=False):
@@ -440,7 +440,7 @@ def show_snp_data(tid, is_multi=False):
     """Display SNP calling data for transcript ID(s)."""
     st.write("Result data for both Cultivated and Wild varieties will be downloaded in the form of HTML content. Click on the files to view data\n")
     if not is_multi:
-        with st.spinner("SNP data loading", show_time=True):
+        with st.spinner("SNP calling data loading", show_time=True):
             try:
                 html_Cultivated_page_source = automate_Cultivated_task(tid)
                 b64_html = base64.b64encode(html_Cultivated_page_source.encode()).decode()
@@ -466,7 +466,7 @@ def show_snp_data(tid, is_multi=False):
                 return False
     else:
         for t_id in tid:
-            with st.spinner("Loading SNP data", show_time=True):
+            with st.spinner("Loading SNP caling data", show_time=True):
                 try:
                     html_Cultivated_page_source = automate_Cultivated_task(t_id)
                     b64_html = base64.b64encode(html_Cultivated_page_source.encode()).decode()
@@ -555,8 +555,8 @@ def show_mirna_data(tid, is_multi=False):
         for t_id in tid:
             temp_result = miRNA_matching_rows[miRNA_matching_rows['Target_Acc.'] == t_id]
             if not temp_result.empty:
-                st.dataframe(temp_result)
-                st.write("\n")
+                #st.dataframe(temp_result)
+                #st.write("\n")
                 result = pd.concat([result, temp_result], ignore_index=True)
             else:
                 st.write(f"No match found for Gene id: {t_id} in miRNA data\n")
@@ -634,32 +634,32 @@ def transcriptid_info(tid):
 
             #con=st.container(border=True)
             #with con:
-                st.subheader("BioChemical Properties")
+                st.subheader("Biochemical Properties")
                 show_biochemical_properties(tid)
 
             con=st.container(border=True)
             with con:
-                st.subheader("Protein and PPI data")
+                st.subheader("Protein and Protein Protein Interaction data")
                 show_protein_ppi_data(tid)
             
             con=st.container(border=True)
             with con:
-                st.subheader("Cellular Localisation data")
-                show_cellular_localisation(tid)
+                st.subheader("Cellular Localization data")
+                show_cellular_Localization(tid)
 
             con=st.container(border=True)
             with con:
-                st.subheader("GO and KEGG data")
+                st.subheader("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes data")
                 show_go_kegg_data(tid)
 
             con=st.container(border=True)
             with con:
-                st.subheader("FPKM Matrix Atlas data")
+                st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas data")
                 show_fpkm_matrix(tid)
 
             con=st.container(border=True)
             with con:
-                st.subheader("SNP Calling data")
+                st.subheader("Single Nucleotide Polymorphism Calling data")
                 show_snp_data(tid)
 
             con=st.container(border=True)
@@ -678,7 +678,7 @@ def transcriptid_info(tid):
                 st.subheader("Orthologs data")
                 show_orthologs_data(tid)
                 
-                st.subheader("Inparalogs data")
+                st.subheader("Paralogs data")
                 show_inparalogs_data(tid)
         else:
             st.error("Gene ID not found\n")
@@ -703,32 +703,32 @@ def multi_transcriptid_info(mtid):
             st.subheader("\nSequences data")
             show_sequence_data(found_ids, is_multi=True)
 
-            st.subheader("BioChemical Properties")
+            st.subheader("Biochemical Properties")
             show_biochemical_properties(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("Protein and PPI data")
+            st.subheader("Protein and Protein Interaction data")
             show_protein_ppi_data(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("\nCellular Localisation data")
-            show_cellular_localisation(found_ids, is_multi=True)
+            st.subheader("\nCellular-localization data")
+            show_cellular_Localization(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("\nGO and KEGG data")
+            st.subheader("\nGene Ontology and Kyoto Encyclopedia of Genes and Genomes data")
             show_go_kegg_data(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("FPKM Matrix Atlas data")
+            st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas data")
             show_fpkm_matrix(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("\nSNP Calling data")
+            st.subheader("\nSingle Nucleotide Polymorphism Calling data")
             show_snp_data(found_ids, is_multi=True)
 
         con=st.container(border=True)
@@ -744,7 +744,7 @@ def multi_transcriptid_info(mtid):
         with con:
             st.subheader("Orthologs data")
             show_orthologs_data(found_ids, is_multi=True)
-            st.subheader("\nInparalogs data")
+            st.subheader("\nParalogs data")
             show_inparalogs_data(found_ids, is_multi=True)
     else:
         st.error("Gene ID not found\n")
