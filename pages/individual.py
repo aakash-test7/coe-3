@@ -3,7 +3,7 @@ from backend import process_locid, process_mlocid, df, show_protein_ppi_data, ml
 from pages.footer_all import base_footer
 
 def ppi_info_page():
-    st.title("Protein Protein Interaction Search")
+    st.title("Protein Protein Interaction")
     st.write("**PPI information**")
     col1, col2 = st.columns(2)
 
