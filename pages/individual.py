@@ -3,7 +3,7 @@ from backend import process_locid, process_mlocid, df, show_protein_ppi_data, ml
 from pages.footer_all import base_footer
 
 def ppi_info_page():
-    st.title("Protein and Protein Protein Interaction Search")
+    st.title("Protein Protein Interaction Search")
     st.write("**PPI information**")
     col1, col2 = st.columns(2)
 
@@ -37,7 +37,7 @@ def ppi_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Protein and Protein Protein Interaction data")
+                        st.subheader("Protein Protein Interaction data")
                         show_protein_ppi_data(tid)
                 else:
                     st.error(f"No match found for Gene ID: {tid}")
@@ -55,7 +55,7 @@ def ppi_info_page():
                 if not matching_rows.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Protein and Protein Prottein Interaction data")
+                        st.subheader("Protein Protein Interaction data")
                         show_protein_ppi_data(mtid_list, is_multi=True)
 
                 if not_found_ids:
@@ -70,7 +70,7 @@ def ppi_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Protein and Protein Prottein Interaction data")
+                        st.subheader("Protein Protein Interaction data")
                         show_protein_ppi_data(tid)
                 else:
                     st.error(f"No match found for NCBI ID: {locid}")
@@ -88,7 +88,7 @@ def ppi_info_page():
                     if not matching_rows.empty:
                         con = st.container(border=True)
                         with con:
-                            st.subheader("Protein and Protein Prottein Interaction data")
+                            st.subheader("Protein Protein Interaction data")
                             show_protein_ppi_data(mtid_list, is_multi=True)
                 st.toast("Task completed successfully.")
 
