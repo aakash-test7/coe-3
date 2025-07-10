@@ -190,7 +190,7 @@ def get_image_url(image_path):
     return generate_signed_url(image_path)
 
 def meta_data_page():
-    st.title("Meta Data")
+    st.title("Statistical Insights")
     st.write("**Key Insights and Analytics from the Application Backend**")
 
     # Call charts (no caching needed for these)
@@ -376,8 +376,8 @@ def about_page():
     if col1.button("ABOUT-US", key="btn_about",use_container_width=True):
         set_active_tab('ABOUT-US')
         st.rerun()
-    if col2.button("META-DATA", key="btn_meta",use_container_width=True):
-        set_active_tab('META-DATA')
+    if col2.button("STATISTICS", key="btn_meta",use_container_width=True):
+        set_active_tab('STATISTICS')
         st.rerun()
     if col3.button("CITATIONS", key="btn_citations",use_container_width=True):
         set_active_tab('CITATIONS')
@@ -392,7 +392,7 @@ def about_page():
     # Display content based on active tab
     if st.session_state.active_tab == 'ABOUT-US':
         display_about_content()
-    elif st.session_state.active_tab == 'META-DATA':
+    elif st.session_state.active_tab == 'STATISTICS':
         meta_data_page()
     elif st.session_state.active_tab == 'CITATIONS':
         citations_page()
