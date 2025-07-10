@@ -5,7 +5,7 @@ import pages as pg
 import time
 from pages.security_login import basic_stats, update_visitor_count
 
-pages = ["HOME", "SEARCH", "GENE-INFO", "SPATIAL EXPRESSION", "RNA", "miRNA", "PPI", "LOCALIZATION", "GO-KEGG", "SNP", "ORTHOLOGS", "ABOUT US", "LOGIN"]
+pages = ["HOME", "SEARCH", "GENE-INFO", "SPATIAL EXPRESSION", "RNA", "miRNA Target", "PPI", "LOCALIZATION", "GO-KEGG", "SNP", "ORTHOLOGS", "ABOUT US", "LOGIN"]
 logo_path = ("logo.svg")
 #urls = {"MDU": "https://mdu.ac.in/default.aspx"}
 options={"use_padding": True, "show_menu":False}
@@ -16,7 +16,7 @@ styles = {
         "height": "4rem",  # Set the total height of the navigation bar
         "display": "flex",  # Use flexbox for layout
         "align-items": "center",  # Vertically center the items
-        "justify-content": "space-between",
+        "justify-content": "space-between",  # Space out the items evenly
         "padding": "0 1rem",  # Add padding to the left and right of the navigation bar
         "overflow-x": "auto",  # Enable horizontal scrolling if the content overflows
         "white-space": "nowrap",  # Prevent items from wrapping to a new line
@@ -177,7 +177,7 @@ functions = {
     "GENE-INFO": pg.gene_info_page,
     "SPATIAL EXPRESSION": pg.spatial_info_page,
     "RNA": pg.rna_type_page,
-    "miRNA": pg.mirna_info_page,
+    "miRNA Target": pg.mirna_info_page,
     "PPI": pg.ppi_info_page,
     "LOCALIZATION": pg.local_info_page,
     "GO-KEGG": pg.go_info_page,
