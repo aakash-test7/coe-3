@@ -3,7 +3,7 @@ from backend import process_locid, process_mlocid, df, show_protein_ppi_data, ml
 from pages.footer_all import base_footer
 
 def ppi_info_page():
-    st.title("Protein Protein Interaction Search")
+    st.title("Protein and Protein Protein Interaction Search")
     st.write("**PPI information**")
     col1, col2 = st.columns(2)
 
@@ -37,7 +37,7 @@ def ppi_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Protein and PPI data")
+                        st.subheader("Protein and Protein Protein Interaction data")
                         show_protein_ppi_data(tid)
                 else:
                     st.error(f"No match found for Gene ID: {tid}")
@@ -55,7 +55,7 @@ def ppi_info_page():
                 if not matching_rows.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Protein and PPI data")
+                        st.subheader("Protein and Protein Prottein Interaction data")
                         show_protein_ppi_data(mtid_list, is_multi=True)
 
                 if not_found_ids:
@@ -70,7 +70,7 @@ def ppi_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Protein and PPI data")
+                        st.subheader("Protein and Protein Prottein Interaction data")
                         show_protein_ppi_data(tid)
                 else:
                     st.error(f"No match found for NCBI ID: {locid}")
@@ -88,7 +88,7 @@ def ppi_info_page():
                     if not matching_rows.empty:
                         con = st.container(border=True)
                         with con:
-                            st.subheader("Protein and PPI data")
+                            st.subheader("Protein and Protein Prottein Interaction data")
                             show_protein_ppi_data(mtid_list, is_multi=True)
                 st.toast("Task completed successfully.")
 
@@ -112,7 +112,7 @@ from backend import process_locid, process_mlocid, df, show_mirna_data, mlocid_e
 
 
 def mirna_info_page():
-    st.title("miRNA Search")
+    st.title("miRNA Target")
     st.write("**miRNA information**")
     col1, col2 = st.columns(2)
     with col1:
@@ -320,7 +320,7 @@ def rna_type_page():
 from backend import process_locid, process_mlocid, df, show_snp_data, mlocid_error
 
 def snp_info_page():
-    st.title("SNP Search")
+    st.title("Single Nucleotide Polymorphism Calling")
     st.write("**snp calling data **")
     col1, col2 = st.columns(2)
 
@@ -352,7 +352,7 @@ def snp_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("SNP Calling data")
+                        st.subheader("Single Nucleotide Polymorphism Calling data")
                         show_snp_data(tid)
                 else:
                     st.error(f"No match found for Gene ID: {tid}")
@@ -367,7 +367,7 @@ def snp_info_page():
                 if not matching_rows.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("SNP Calling data")
+                        st.subheader("Single Nucleotide Polymorphism Calling data")
                         show_snp_data(mtid_list, is_multi=True)
                 if not_found_ids:
                     st.error(f"No matches found for Gene IDs: {', '.join(not_found_ids)}")
@@ -379,7 +379,7 @@ def snp_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("SNP Calling data")
+                        st.subheader("Single Nucleotide Polymorphism Calling data")
                         show_snp_data(tid)
                 else:
                     st.error(f"No match found for NCBI ID: {locid}")
@@ -395,7 +395,7 @@ def snp_info_page():
                     if not matching_rows.empty:
                         con = st.container(border=True)
                         with con:
-                            st.subheader("SNP Calling data")
+                            st.subheader("Single Nucleotide Polymorphism Calling data")
                             show_snp_data(mtid_list, is_multi=True)
                 st.toast("Task completed successfully.")
 
@@ -458,7 +458,7 @@ def spatial_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("FPKM Matrix Atlas data")
+                        st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas data")
                         show_fpkm_matrix(tid)
                 else:
                     st.error(f"No match found for Gene ID: {tid}")
@@ -478,7 +478,7 @@ def spatial_info_page():
                 if not matching_rows.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("FPKM Matrix Atlas data")
+                        st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas data")
                         show_fpkm_matrix(mtid_list, is_multi=True)
                 if not_found_ids:
                     st.error(f"No matches found for Gene IDs: {', '.join(not_found_ids)}")
@@ -493,7 +493,7 @@ def spatial_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("FPKM Matrix Atlas data")
+                        st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas data")
                         show_fpkm_matrix(tid)
                 else:
                     st.error(f"No match found for NCBI ID: {locid}")
@@ -511,7 +511,7 @@ def spatial_info_page():
                     if not matching_rows.empty:
                         con = st.container(border=True)
                         with con:
-                            st.subheader("FPKM Matrix Atlas data")
+                            st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas data")
                             show_fpkm_matrix(mtid_list, is_multi=True)
                 st.toast("Task completed successfully.")
 
@@ -533,7 +533,7 @@ def spatial_info_page():
 from backend import process_locid, process_mlocid, df, show_orthologs_data, show_inparalogs_data, mlocid_error
 
 def orthologs_info_page():
-    st.title("Orthologs Search")
+    st.title("Orthologs/Paralogs Prediction")
     st.write("**Orthologs information**")
     col1, col2 = st.columns(2)
     with col1:
@@ -564,7 +564,7 @@ def orthologs_info_page():
                     with con:
                         st.subheader("Ortholog data")
                         show_orthologs_data(tid)
-                        st.subheader("Inparalog data")
+                        st.subheader("Paralog data")
                         show_inparalogs_data(tid)
                 else:
                     st.error(f"No match found for Gene ID: {tid}")
@@ -583,7 +583,7 @@ def orthologs_info_page():
                     with con:
                         st.subheader("Ortholog data")
                         show_orthologs_data(mtid_list, is_multi=True)
-                        st.subheader("Inparalog data")
+                        st.subheader("Paralog data")
                         show_inparalogs_data(mtid_list, is_multi=True)
                 if not_found_ids:
                     st.error(f"No matches found for Gene IDs: {', '.join(not_found_ids)}")
@@ -599,7 +599,7 @@ def orthologs_info_page():
                     with con:
                         st.subheader("Ortholog data")
                         show_orthologs_data(tid)
-                        st.subheader("Inparalog data")
+                        st.subheader("Paralog data")
                         show_inparalogs_data(tid)
                 else:
                     st.error(f"No match found for NCBI ID: {locid}")
@@ -618,7 +618,7 @@ def orthologs_info_page():
                         with con:
                             st.subheader("Ortholog data")
                             show_orthologs_data(mtid_list, is_multi=True)
-                            st.subheader("Inparalog data")
+                            st.subheader("Paralog data")
                             show_inparalogs_data(mtid_list, is_multi=True)
                 st.toast("Task completed successfully.")
 
@@ -640,7 +640,7 @@ def orthologs_info_page():
 from backend import process_locid, process_mlocid, df, show_go_kegg_data, mlocid_error
 
 def go_info_page():
-    st.title("GO & KEGG Search")
+    st.title("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes Analysis")
     st.write("**Functional annotation**")
     col1, col2 = st.columns(2)
     with col1:
@@ -669,7 +669,7 @@ def go_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("GO and KEGG data")
+                        st.subheader("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes data")
                         show_go_kegg_data(tid)
                 else:
                     st.error(f"No match found for Gene ID: {tid}")
@@ -684,7 +684,7 @@ def go_info_page():
                 if not matching_rows.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("GO and KEGG data")
+                        st.subheader("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes data")
                         show_go_kegg_data(mtid_list, is_multi=True)
                 if not_found_ids:
                     st.error(f"No matches found for Gene IDs: {', '.join(not_found_ids)}")
@@ -696,7 +696,7 @@ def go_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("GO and KEGG data")
+                        st.subheader("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes data")
                         show_go_kegg_data(tid)
                 else:
                     st.error(f"No match found for NCBI ID: {locid}")
@@ -712,7 +712,7 @@ def go_info_page():
                     if not matching_rows.empty:
                         con = st.container(border=True)
                         with con:
-                            st.subheader("GO and KEGG data")
+                            st.subheader("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes data")
                             show_go_kegg_data(mtid_list, is_multi=True)
                 st.toast("Task completed successfully.")
             if rejected:
@@ -769,7 +769,7 @@ def gene_info_page():
                         st.subheader("Sequence data")
                         show_sequence_data(tid)
 
-                        st.subheader("BioChemical Properties")
+                        st.subheader("Biochemical Properties")
                         show_biochemical_properties(tid)
                 else:
                     st.error(f"No match found for Gene ID: {tid}")
@@ -791,7 +791,7 @@ def gene_info_page():
                         st.subheader("\nSequences data")
                         show_sequence_data(mtid_list, is_multi=True)
 
-                        st.subheader("BioChemical Properties")
+                        st.subheader("Biochemical Properties")
                         show_biochemical_properties(mtid_list, is_multi=True)
 
                 if not_found_ids:
@@ -810,7 +810,7 @@ def gene_info_page():
                         st.subheader("Sequence data")
                         show_sequence_data(tid)
 
-                        st.subheader("BioChemical Properties")
+                        st.subheader("Biochemical Properties")
                         show_biochemical_properties(tid)
                 else:
                     st.error(f"No match found for NCBI ID: {locid}")
@@ -831,7 +831,7 @@ def gene_info_page():
                             st.subheader("\nSequences data")
                             show_sequence_data(mtid_list, is_multi=True)
 
-                            st.subheader("BioChemical Properties")
+                            st.subheader("Biochemical Properties")
                             show_biochemical_properties(mtid_list, is_multi=True)
                 st.toast("Task completed successfully.")
             if rejected:
@@ -848,11 +848,11 @@ def gene_info_page():
     base_footer()
     return
 
-from backend import process_locid, process_mlocid, df, show_cellular_localisation, mlocid_error
+from backend import process_locid, process_mlocid, df, show_cellular_Localization, mlocid_error
 
 def local_info_page():
-    st.title("Localisation Search")
-    st.write("**Localisation information**")
+    st.title("Localization Search")
+    st.write("**Localization information**")
     col1, col2 = st.columns(2)
     with col1:
         c1 = st.container(border=True)
@@ -880,8 +880,8 @@ def local_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Localisation data")
-                        show_cellular_localisation(tid)
+                        st.subheader("Cellular-localization data")
+                        show_cellular_Localization(tid)
                 else:
                     st.error(f"No match found for Gene ID: {tid}")
             st.toast("Task completed successfully.")
@@ -895,8 +895,8 @@ def local_info_page():
                 if not matching_rows.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Localisation data")
-                        show_cellular_localisation(mtid_list, is_multi=True)
+                        st.subheader("Cellular-localization data")
+                        show_cellular_Localization(mtid_list, is_multi=True)
                 if not_found_ids:
                     st.error(f"No matches found for Gene IDs: {', '.join(not_found_ids)}")
             st.toast("Task completed successfully.")
@@ -907,8 +907,8 @@ def local_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Localisation data")
-                        show_cellular_localisation(tid)
+                        st.subheader("Cellular-localization data")
+                        show_cellular_Localization(tid)
                 else:
                     st.error(f"No match found for NCBI ID: {locid}")
             st.toast("Task completed successfully.")
@@ -923,8 +923,8 @@ def local_info_page():
                     if not matching_rows.empty:
                         con = st.container(border=True)
                         with con:
-                            st.subheader("Localisation data")
-                            show_cellular_localisation(mtid_list, is_multi=True)
+                            st.subheader("Cellular-localization data")
+                            show_cellular_Localization(mtid_list, is_multi=True)
                 st.toast("Task completed successfully.")
 
             if rejected:
