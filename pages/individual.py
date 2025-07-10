@@ -533,7 +533,7 @@ def spatial_info_page():
 from backend import process_locid, process_mlocid, df, show_orthologs_data, show_inparalogs_data, mlocid_error
 
 def orthologs_info_page():
-    st.title("Orthologs/Paralogs Prediction")
+    st.title("Orthologs/Paralogs")
     st.write("**Orthologs information**")
     col1, col2 = st.columns(2)
     with col1:
