@@ -5,7 +5,7 @@ import pages as pg
 import time
 from pages.security_login import basic_stats, update_visitor_count
 
-pages = ["HOME", "SEARCH", "GENE-INFO", "SPATIAL EXPRESSION", "RNA", "miRNA Target", "PPI", "LOCALIZATION", "GO-KEGG", "SNP", "ORTHOLOGS", "ABOUT US", "LOGIN"]
+pages = ["HOME", "SEARCH", "GENE-INFO", "SPATIAL-EXPRESSION", "RNA", "miRNA-Target", "PPI", "LOCALIZATION", "GO-KEGG", "SNP-CALLING", "ORTHOLOGS/PARALOGS", "ABOUT-US", "LOGIN"]
 logo_path = ("logo.svg")
 #urls = {"MDU": "https://mdu.ac.in/default.aspx"}
 options={"use_padding": True, "show_menu":False}
@@ -175,15 +175,15 @@ functions = {
     "HOME": pg.home_page,
     "SEARCH": pg.search_page,
     "GENE-INFO": pg.gene_info_page,
-    "SPATIAL EXPRESSION": pg.spatial_info_page,
+    "SPATIAL-EXPRESSION": pg.spatial_info_page,
     "RNA": pg.rna_type_page,
-    "miRNA Target": pg.mirna_info_page,
+    "miRNA-Target": pg.mirna_info_page,
     "PPI": pg.ppi_info_page,
     "LOCALIZATION": pg.local_info_page,
     "GO-KEGG": pg.go_info_page,
-    "SNP": pg.snp_info_page,
-    "ORTHOLOGS": pg.orthologs_info_page,
-    "ABOUT US": pg.about_page,
+    "SNP-CALLING": pg.snp_info_page,
+    "ORTHOLOGS/PARALOGS": pg.orthologs_info_page,
+    "ABOUT-US": pg.about_page,
     "LOGIN": pg.login_page
 }
 
