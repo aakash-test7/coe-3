@@ -4,7 +4,7 @@ from pages.mainapp import base_footer
 
 def ppi_info_page():
     st.title("Protein Protein Interaction")
-    st.write("**PPI information**")
+    st.write("**It gives the details about the interacting partners of a protein and interactions effects the functions of a genes**")
     col1, col2 = st.columns(2)
 
     with col1:
@@ -113,7 +113,7 @@ from backend import process_locid, process_mlocid, df, show_mirna_data, mlocid_e
 
 def mirna_info_page():
     st.title("miRNA Target")
-    st.write("**miRNA information**")
+    st.write("**Users can get the details about the putative miRNAs of the particular gene**")
     col1, col2 = st.columns(2)
     with col1:
         c1 = st.container(border=True)
@@ -205,7 +205,7 @@ from backend import process_locid, process_mlocid, df, show_rna_data, show_lncrn
 
 def rna_type_page():
     st.title("RNA type Search")
-    st.write("**RNA information**")
+    st.write("**Give details about the coding potential of RNA (mRNA or LncRNA)**")
     col1, col2 = st.columns(2)
 
     with col1:
@@ -321,7 +321,7 @@ from backend import process_locid, process_mlocid, df, show_snp_data, mlocid_err
 
 def snp_info_page():
     st.title("Single Nucleotide Polymorphism Calling")
-    st.write("**snp calling data **")
+    st.write("**It gives the details of putative SNP variations obtained from the chickpea pangenome**")
     col1, col2 = st.columns(2)
 
     with col1:
@@ -418,7 +418,7 @@ from backend import process_locid, process_mlocid, df, show_fpkm_matrix, mlocid_
 def spatial_info_page():
 
     st.title("Spatial Expression Search")
-    st.write("**fpkm data**")
+    st.write("**Provide the information about the temporal expression among 32 different developmental stages**")
 
     col1, col2 = st.columns(2)
 
@@ -534,7 +534,7 @@ from backend import process_locid, process_mlocid, df, show_orthologs_data, show
 
 def orthologs_info_page():
     st.title("Orthologs/Paralogs")
-    st.write("**Orthologs information**")
+    st.write("**Users can get the details about the conserveness in gene sequences among/within genome of various crop plants**")
     col1, col2 = st.columns(2)
     with col1:
         c1 = st.container(border=True)
@@ -641,7 +641,7 @@ from backend import process_locid, process_mlocid, df, show_go_kegg_data, mlocid
 
 def go_info_page():
     st.title("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes Analysis")
-    st.write("**Functional annotation**")
+    st.write("**Give the details about the gene functions and their involvement in various molecular pathways**")
     col1, col2 = st.columns(2)
     with col1:
         c1 = st.container(border=True)
@@ -733,7 +733,7 @@ from backend import process_locid, process_mlocid, show_sequence_data,df, show_b
 
 def gene_info_page():
     st.title("Gene Information Search")
-    st.write("**gene information**")
+    st.write("**Give detailed insights about each Genomic Sequence, RNA Sequence, CDS Sequence, Promoter Sequences, Peptide Sequence and biochemical properties of each protein**")
     col1, col2 = st.columns(2)
 
     with col1:
@@ -852,7 +852,7 @@ from backend import process_locid, process_mlocid, df, show_cellular_Localizatio
 
 def local_info_page():
     st.title("Localization Search")
-    st.write("**Localization information**")
+    st.write("**It provides the probable cellular location of a gene expression and predicted on the basis of signal sequences**")
     col1, col2 = st.columns(2)
     with col1:
         c1 = st.container(border=True)
