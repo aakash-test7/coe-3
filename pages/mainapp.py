@@ -1196,8 +1196,8 @@ def home_page():
     #st.markdown("""<style>.block-container {padding-top: 6rem;padding-bottom: 2rem;padding-left: 1rem;padding-right: 1rem;}</style>""", unsafe_allow_html=True)
     col1,col2,col3=st.columns([1,2,1])
     with col1:
-        con=st.container(border=True,height=250)
-        con=st.container(border=True,height=250)
+        con=st.container(border=True,height=260)
+        con=st.container(border=True,height=260)
     col2.markdown(''
         '<style>'
         '    /* General Styles */'
@@ -1244,34 +1244,28 @@ def home_page():
         '<div class="hp-body">'
         '  <div class="hp-container">'
         '    <!-- Heading and Subheading -->'
-        '    <p style="text-align: center; font-size: 3.5rem; margin-bottom: 5px; color: #2c3e50; font-weight: bold;">CicerOmicsExplorer</p>'
-        '    <p style="text-align: center; font-size: 1.2rem; color: #7f8c8d; margin-bottom: 10px; font-weight: bold;">CHICKPEA DATABASE</p>'
+        '    <p style="text-align: center; font-size: 3rem; margin-bottom: 5px; color: #2c3e50; font-weight: bold;">ChickpeaOmicsExplorer</p>'
+        '    <p style="text-align: center; font-size: 1.2rem; color: #7f8c8d; margin-bottom: 10px; font-weight: bold;">CHICKPEA(Cicer arietinum L.) DATABASE</p>'
         '    <!-- Paragraph with List and Special Effects -->'
         '    <br><p class="hp-paragraph">'
-        '      This is a <b>creative</b> paragraph showcasing some <em>special effects</em>. Here\'s an unordered list of ideas:'
+        '      Chickpea (Cicer arietinum L.), a major legume valued for its high protein content and predominantly cultivated in arid and semi-arid regions. With the advent of high throughput sequencing technologies vast amount of genomic and transcriptomic data have been generated. To effectively utilize this wealth of information, we developed AI-driven platform, the “CHICKPEA OMICS EXPLORER”. This interactive database integrates multiple genomic resources including Phytozome, NCBI, CicerSeq and the chickpea transcriptome database. It offers comprehensive tools for spatial-temporal gene expression profiling, motif discovery, RNA coding potential analysis, protein interaction networks, pathway enrichment analysis, SNP detection, and ortholog identification. By consolidating diverse datasets and analysis, the Chickpea Omics Explorer serves as a powerful resourse for trait dissection, molecular breeding and functional genomics research in chickpea.'
         '    </p>'
         '    <ul class="hp-list">'
-        '      <li>Dynamic Images</li>'
-        '      <li>Bold Text</li>'
-        '      <li>Images</li>'
         '    </ul>'
         '    <!-- Additional Paragraphs -->'
         '    <p class="hp-additional-paragraph">'
-        '    Hello ...'
         '    </p>'
         '    <p class="hp-additional-paragraph">'
-        '      Hello ... <b>bold text</b> and <em>italicized text</em>...'
         '    </p>'
         '    <!-- More Text -->'
         '    <p class="hp-additional-paragraph">'
-        '      hello ...'
         '    </p>'
         '  </div>'
         '</div>'
         '', unsafe_allow_html=True)
     with col3:
-        con=st.container(border=True,height=250)
-        con=st.container(border=True,height=250)
+        con=st.container(border=True,height=260)
+        con=st.container(border=True,height=260)
     #sub1
     con=st.container(border=False, key="rest1container")
     with con:
