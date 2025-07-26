@@ -1221,6 +1221,7 @@ def home_page():
         '        font-size: 1rem;'
         '        line-height: 1.6;'
         '        margin-bottom: 20px;'
+        '        text-align: justify; /* Text is now justified */'
         '    }'
         '    .hp-paragraph b {'
         '        color: #e74c3c;'
