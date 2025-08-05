@@ -68,12 +68,14 @@ prop_df=read_excel_from_gcs(bucket_name,"Data/16.xlsx")
 def normalize_data(data):
     return data.applymap(lambda x: np.log2(x) if x > 0 else 0)
 
-def format_sequence(seq):
+def format_sequence2(seq):
     if isinstance(seq, float) and np.isnan(seq):
         return ''
     
     return '\n'.join('\t\t ' + ' '.join([seq[i:i+6] for i in range(j, min(j + 90, len(seq)), 6)]) for j in range(0, len(seq), 90))
 
+def format_sequence(seq):    
+    return seq
 
 def get_string_network_link(protein_transcript):
 
