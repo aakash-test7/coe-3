@@ -483,8 +483,8 @@ def display_about_content():
                  \nMaharshi Dayanand University, Rohtak, HR, India\
                  \nㅤ")
         d0,d1,d2,d3,d4=c2.columns([1,5,1,5,1])
-        d1.link_button("Profile",url="wwww.google.com",use_container_width=True)
-        d3.link_button("Email",url="mailto:abc@gmail.com",use_container_width=True)
+        d1.link_button("Profile",url="https://linktr.ee/techwill",use_container_width=True)
+        d3.link_button("Email",url="mailto:ssgill14@mdurohtak.ac.in",use_container_width=True)
     
     # Container 2
     con = col2.container(border=False, key="au2")
@@ -497,7 +497,7 @@ def display_about_content():
                  \nMaharshi Dayanand University, Rohtak, HR, India")
         d0,d1,d2,d3,d4=c2.columns([1,5,1,5,1])
         d1.link_button("Profile",url="wwww.google.com",use_container_width=True)
-        d3.link_button("Email",url="mailto:abc@gmail.com",use_container_width=True)
+        d3.link_button("Email",url="mailto:kduiet@mdurohtak.ac.in",use_container_width=True)
 
     # Container 3
     con = col1.container(border=False, key="au3")
@@ -543,13 +543,13 @@ def display_about_content():
     with con:
         c1, c2 = st.columns([7,13])
         c1.image(get_image_url("About/img.jpg"), use_container_width=True)
-        c2.subheader("Aakash Kharb")
+        c2.subheader("Mr. Aakash Kharb")
         c2.write("Department of Computer Science and Technology\
                  \nUniversity Institute of Engineering and Technology,\
                  \nMaharshi Dayanand University, Rohtak, HR, India")
         d0,d1,d2,d3,d4=c2.columns([1,5,1,5,1])
         d1.link_button("Profile",url="wwww.google.com",use_container_width=True)
-        d3.link_button("Email",url="mailto:abc@gmail.com",use_container_width=True)
+        d3.link_button("Email",url="mailto:akharbrtk@gmail.com",use_container_width=True)
     return
 
 def about_page():
@@ -562,7 +562,7 @@ def about_page():
     # Create columns for buttons
     st.write(" ")
     col1, col2, col3, col4, col5 = st.columns(5)
-    if col1.button("ABOUT-US", key="btn_about",use_container_width=True):
+    if col1.button("ABOUT US", key="btn_about",use_container_width=True):
         set_active_tab('ABOUT-US')
         st.rerun()
     if col2.button("STATISTICS", key="btn_meta",use_container_width=True):
