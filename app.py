@@ -5,7 +5,7 @@ import pages as pg
 import time
 from pages.mainapp import basic_stats, update_visitor_count
 
-pages = ["HOME", "SEARCH", "GENE-INFO", "SPATIAL-EXPRESSION", "RNA", "miRNA-Target", "PPI", "LOCALIZATION", "GO-KEGG", "SNP-CALLING", "ORTHOLOGS/PARALOGS", "ABOUT-US", "LOGIN"]
+pages = ["HOME", "SEARCH", "GENE-INFO", "SPATIAL-EXPRESSION", "RNA", "miRNA-Target", "PPI", "LOCALIZATION", "GO-KEGG", "SNP-CALLING", "ORTHOLOGS/PARALOGS", "ABOUT US", "LOGIN"]
 logo_path = ("logo.svg")
 #urls = {"MDU": "https://mdu.ac.in/default.aspx"}
 options={"use_padding": True, "show_menu":False}
@@ -183,7 +183,7 @@ functions = {
     "GO-KEGG": pg.go_info_page,
     "SNP-CALLING": pg.snp_info_page,
     "ORTHOLOGS/PARALOGS": pg.orthologs_info_page,
-    "ABOUT-US": pg.about_page,
+    "ABOUT US": pg.about_page,
     "LOGIN": pg.login_page
 }
 
