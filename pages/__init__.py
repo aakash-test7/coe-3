@@ -15,3 +15,4 @@ from pages.individual import go_info_page
 from pages.individual import local_info_page
 from pages.individual import orthologs_info_page
 from pages.individual import snp_info_page
+from pages.individual import primer_info_page
