@@ -1018,85 +1018,89 @@ def security_login():
         st.write("Welcome to the Search Page!")
     return
 
+
 def login_interface():
-    #with st.container(border=True):
-    with st.expander("⠀", expanded=st.session_state.get('expander_state', True)):
-        col1, col2, col3, col4, col5 = st.columns(5)
-        with col3:
-            st.title("Login")
+    col1, col2, col3 = st.columns([1,3,1])
+    con=col2.container(border=True)
+    with con:
+            c1,c2,c3=st.columns(3)
+            with c2:
+                st.markdown("<h1 style='text-align: center;'>Login</h1>", unsafe_allow_html=True)
+
+            col2, col3 = st.columns(2,gap="small", vertical_alignment="center")
+            with col2:
+                st.markdown("<h3 style='text-align: center;'>Enter Username</h3>", unsafe_allow_html=True)
+            with col3:
+                username = st.text_input("Username", key="login_username", label_visibility="collapsed")
         
-        col1, col2, col3, col4 = st.columns(4)
-        with col2:
-            st.subheader("Enter Username")
-        with col3:
-            username = st.text_input("Username", key="login_username", label_visibility="collapsed")
+            col2, col3 = st.columns(2,gap="small", vertical_alignment="center")
+            with col2:
+                st.markdown("<h3 style='text-align: center;'>Enter Password</h3>", unsafe_allow_html=True)
+            with col3:
+                password = st.text_input("Password", key="login_password", type="password", label_visibility="collapsed")
         
-        col1, col2, col3, col4 = st.columns(4)
-        with col2:
-            st.subheader("Enter Password")
-        with col3:
-            password = st.text_input("Password", key="login_password", type="password", label_visibility="collapsed")
-        
-        col1, col2, col3, col4, col5, col6, col7 = st.columns([1, 1, 1, 2, 1, 1, 1])
-        with col4:
-            if st.button("Continue", use_container_width=True):
-                st.success("Checking credentials")
-                if check_user(username, password):
-                    st.success("Logged in successfully!")
-                    st.write("By clicking Confirm you agree to the Code of Conduct. utilize the true potential of this amazing Explorer")
-                    st.session_state["logged_in"] = True
-                    st.session_state['authenticated'] = True
-                    st.session_state['username'] = username
-                    #st.session_state['expander_state'] = False
-                    if st.session_state.get("redirect_to_login", False):
-                        st.session_state["redirect_to_login"] = False
-                        #st.switch_page("pages/Search.py")
-                        #time.sleep(2)
-                        #st.rerun()
-                else:
-                    st.error("Invalid username or password")
+            col2, col3, col4= st.columns([1, 2, 1,],gap="small", vertical_alignment="center")
+            c1,c2,c3=st.columns([1,99,1],gap="small", vertical_alignment="center")
+            with col3:
+                if st.button("Continue", use_container_width=True):
+                    st.success("Checking credentials")
+                    if check_user(username, password):
+                        st.success("Logged in successfully!")
+                        c2.write("By clicking Confirm you agree to the Code of Conduct. utilize the true potential of this amazing Explorer")
+                        st.session_state["logged_in"] = True
+                        st.session_state['authenticated'] = True
+                        st.session_state['username'] = username
+                        #st.session_state['expander_state'] = False
+                        if st.session_state.get("redirect_to_login", False):
+                            st.session_state["redirect_to_login"] = False
+                            #st.switch_page("pages/Search.py")
+                            #time.sleep(2)
+                            #st.rerun()
+                    else:
+                        st.error("Invalid username or password")
 
 def register_interface():
-    with st.container(border=True):
-        col1, col2, col3, col4, col5 = st.columns(5)
-        with col3:
-            st.title("Register")
+    col1, col2, col3 = st.columns([1,3,1])
+    con=col2.container(border=True)
+    with con:
+            c1,c2,c3=st.columns(3)
+            with c2:
+                st.markdown("<h1 style='text-align: center;'>Register</h1>", unsafe_allow_html=True)
         
-        col1, col2, col3, col4 = st.columns(4)
-        with col2:
-            st.subheader("First Name")
-            fname = st.text_input("FirstName", label_visibility="collapsed")
-        with col3:
-            st.subheader("Last Name")
-            lname = st.text_input("LastName", label_visibility="collapsed")
+            col2, col3 = st.columns(2,gap="small", vertical_alignment="center")
+            with col2:
+                st.markdown("<h3 style='text-align: center;'>First Name</h3>", unsafe_allow_html=True)
+                fname = st.text_input("FirstName", label_visibility="collapsed")
+            with col3:
+                st.markdown("<h3 style='text-align: center;'>Last Name</h3>", unsafe_allow_html=True)
+                lname = st.text_input("LastName", label_visibility="collapsed")
         
-        col1, col2, col3, col4 = st.columns(4)
-        with col2:
-            st.subheader("Create Username")
-        with col3:
-            username1 = st.text_input("Username", label_visibility="collapsed")
+            col2, col3 = st.columns(2,gap="small", vertical_alignment="center")
+            with col2:
+                st.markdown("<h3 style='text-align: center;'>Create Username</h3>", unsafe_allow_html=True)
+            with col3:
+                username1 = st.text_input("Username", label_visibility="collapsed")
+            
+            col2, col3 = st.columns(2,gap="small", vertical_alignment="center")
+            with col2:
+                st.markdown("<h3 style='text-align: center;'>Enter Email</h3>", unsafe_allow_html=True)
+            with col3:
+                email1 = st.text_input("Email", label_visibility="collapsed")
         
-        col1, col2, col3, col4 = st.columns(4)
-        with col2:
-            st.subheader("Enter Email")
-        with col3:
-            email1 = st.text_input("Email", label_visibility="collapsed")
+            col2, col3 = st.columns(2,gap="small", vertical_alignment="center")
+            with col2:
+                st.markdown("<h3 style='text-align: center;'>Create Password</h3>", unsafe_allow_html=True)
+            with col3:
+                password1 = st.text_input("Password1", type="password", label_visibility="collapsed")
+
+            col2, col3 = st.columns(2,gap="small", vertical_alignment="center")
+            with col2:
+                st.markdown("<h3 style='text-align: center;'>Confirm Password</h3>", unsafe_allow_html=True)
+            with col3:
+                password2 = st.text_input("Password2", type="password", label_visibility="collapsed")
         
-        col1, col2, col3, col4 = st.columns(4)
-        with col2:
-            st.subheader("Create Password")
-        with col3:
-            password1 = st.text_input("Password1", type="password", label_visibility="collapsed")
-        
-        col1, col2, col3, col4 = st.columns(4)
-        with col2:
-            st.subheader("Confirm Password")
-        with col3:
-            password2 = st.text_input("Password2", type="password", label_visibility="collapsed")
-        
-        col1, col2, col3, col4, col5, col6, col7 = st.columns([1, 1, 1, 2, 1, 1, 1])
-        with col4:
-            if st.button("Register", use_container_width=True):
+            col2, col3, col4= st.columns([1, 2, 1,],gap="small", vertical_alignment="center")
+            if col3.button("Register", use_container_width=True):
                 if password1 == password2:
                     st.success("Password checked")
                     if not validate_username_length(username1):
@@ -1122,7 +1126,15 @@ def register_interface():
 def login_page():
     if 'current_interface' not in st.session_state:
         st.session_state.current_interface = None
-    st.title("Security")
+
+    con=st.container(border=False)
+    with con:
+        col1,col2=st.columns([4,6])
+        col1.image("logo1.svg", use_container_width=True)
+        with col2:
+            st.markdown("<h1 style='text-align: center;'>WELCOME</h1>", unsafe_allow_html=True)
+            st.markdown("<h3 style='text-align: center;'>Log in to the CHICKPEA OMICS EXPLORER to explore the world of Chickpea Genomics and Proteomics</h3>", unsafe_allow_html=True)
+    #st.title("Security")
 
     if st.session_state.get("logged_in", False) and st.session_state.get("authenticated", False):
         username = st.session_state.get('username')
