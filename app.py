@@ -5,9 +5,8 @@ import pages as pg
 import time
 from pages.mainapp import basic_stats, update_visitor_count
 
-pages = ["HOME", "SEARCH", "GENE-INFO", "SPATIAL-EXPRESSION", "RNA", "miRNA-Target", "PPI", "LOCALIZATION", "GO-KEGG", "SNP-CALLING", "ORTHOLOGS/PARALOGS", "ABOUT US", "LOGIN"]
-logo_path = ("logo.svg")
-#urls = {"MDU": "https://mdu.ac.in/default.aspx"}
+pages = ["HOME", "SEARCH", "SPATIAL-EXPRESSION", "RNA", "miRNA-Target", "PPI", "LOCALIZATION", "GO-KEGG", "ORTHOLOGS/PARALOGS", "ABOUT US", "LOGIN"]
+logo_path = ("logo1.svg")
 options={"use_padding": True, "show_menu":False}
 
 styles = {
@@ -38,6 +37,10 @@ styles = {
     "hover": {
         "background-color": "rgba(255, 255, 255, 0.35)",  # Background color on hover
     },
+    "img": {
+        "height": "5rem",  # Logo height
+        "width": "12rem",   # Logo width
+    },
 }
 
 #st.markdown("""<style>.stApp {padding-top: 6rem !important;}</style>""", unsafe_allow_html=True)
@@ -47,15 +50,19 @@ page = st_navbar(pages, logo_path=logo_path, styles=styles, options=options,logo
 
 # Logic for redirecting to login or setting pages
 if st.session_state.get("redirect_to_login", False):
-    st.session_state.current_page = "LOGIN"  # Redirect to Login page
+    st.session_state.current_page = "LOGIN"
 elif st.session_state.get("redirected_to_login", True) is False:
-    if "first_time" not in st.session_state or st.session_state.first_time:  # Check if it's the first time
-        st.session_state.current_page = "SEARCH"  # First-time visit after redirect should go to Search page
-        st.session_state.first_time = False  # Set first_time to False after first visit
+    if "first_time" not in st.session_state or st.session_state.first_time:
+        st.session_state.current_page = "SEARCH"
+        st.session_state.first_time = False
 else:
-    # Set the current page to the selected page from the navbar
-    if page != st.session_state.current_page:
-        st.session_state.current_page = page
+    # Only update from navbar if no programmatic navigation is requested
+    if not st.session_state.get("programmatic_nav", False):
+        if page != st.session_state.current_page:
+            st.session_state.current_page = page
+    else:
+        # Reset the programmatic navigation flag
+        st.session_state.programmatic_nav = False
 
 external_links = {
     "NCBI": "https://www.ncbi.nlm.nih.gov/",
@@ -77,7 +84,6 @@ for name, link in external_links.items():
 f'<a href="{link}" target="_blank" class="sidebar-button" style="text-decoration: none; background-color: rgb(255, 119, 75); color: black;" onmouseover="this.style.textDecoration=\'none\'; this.style.color=\'black\';" onmouseout="this.style.textDecoration=\'none\'; this.style.color=\'black\';">{name}</a>',
         unsafe_allow_html=True)
     
-
 #visitor
 if 'first_access' not in st.session_state:
     st.session_state.first_access = True
@@ -94,7 +100,6 @@ if st.session_state.display_count:
     st.toast(f"Visitor Count : {st.session_state.visitor_count}")
     st.session_state.display_count = False
 
-#metric=st.sidebar.metric(value=st.session_state.visitor_count,label="Total Visitors",border=True,)
 visitor_placeholder = st.sidebar.empty()
 
 if st.session_state.get("authenticated",False): #logout
@@ -105,11 +110,7 @@ if st.session_state.get("authenticated",False): #logout
     if st.sidebar.button("Site Sync"):
         st.session_state.member, st.session_state.search=basic_stats()
         st.session_state.visitor_count = update_visitor_count()
-        #st.sidebar.subheader(f"Total Visitors : {visitor_count}")  #change
         visitor_placeholder.metric(value=st.session_state.visitor_count, label="Total Visitors", border=True)
-    #col1,col2=st.sidebar.columns(2)
-    #col1.metric(value=st.session_state.member,label="Total Members",delta=None,border=True,)    #change
-    #col2.metric(value=st.session_state.search,label="Total Searches",delta=None,border=True,)    #change
     member_placeholder.metric(value=st.session_state.member, label="Total Members", delta=None, border=True)
     search_placeholder.metric(value=st.session_state.search, label="Total Searches", delta=None, border=True)
     if st.sidebar.button("Logout",key="logout_sidebar"):
@@ -125,11 +126,9 @@ else:
 
     if st.sidebar.button("Site Sync", key="non-member"):
         st.session_state.visitor_count = update_visitor_count()
-        #st.sidebar.subheader(f"Total Visitors : {visitor_count}")  #change
         visitor_placeholder.metric(value=st.session_state.visitor_count, label="Total Visitors", border=True)
         st.toast(f"Total visitors: {st.session_state.visitor_count}")
 
-#st.sidebar.markdown("---")  # Adds a separator
 st.markdown(
     """
     <style>
