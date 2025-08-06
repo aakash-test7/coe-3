@@ -51,18 +51,29 @@ page = st_navbar(pages, logo_path=logo_path, styles=styles, options=options,logo
 # Logic for redirecting to login or setting pages
 if st.session_state.get("redirect_to_login", False):
     st.session_state.current_page = "LOGIN"
+    st.session_state.programmatic_nav = False
 elif st.session_state.get("redirected_to_login", True) is False:
     if "first_time" not in st.session_state or st.session_state.first_time:
         st.session_state.current_page = "SEARCH"
         st.session_state.first_time = False
-else:
-    # Only update from navbar if no programmatic navigation is requested
-    if not st.session_state.get("programmatic_nav", False):
-        if page != st.session_state.current_page:
-            st.session_state.current_page = page
-    else:
-        # Reset the programmatic navigation flag
         st.session_state.programmatic_nav = False
+else:
+    # Initialize last_navbar_page if not exists
+    if "last_navbar_page" not in st.session_state:
+        st.session_state.last_navbar_page = "HOME"
+    
+    # Check if user clicked on navbar (page changed from navbar)
+    if page != st.session_state.last_navbar_page and page in pages:
+        # User clicked on navbar item, override any programmatic navigation
+        st.session_state.current_page = page
+        st.session_state.programmatic_nav = False
+        st.session_state.last_navbar_page = page
+    elif not st.session_state.get("programmatic_nav", False):
+        # No programmatic navigation active, follow navbar selection
+        if page in pages:
+            st.session_state.current_page = page
+            st.session_state.last_navbar_page = page
+    # If programmatic_nav is True, keep the current page as set programmatically
 
 external_links = {
     "NCBI": "https://www.ncbi.nlm.nih.gov/",
@@ -189,3 +200,5 @@ functions = {
 go_to = functions.get(st.session_state.current_page)
 if go_to:
     go_to()
+
+
