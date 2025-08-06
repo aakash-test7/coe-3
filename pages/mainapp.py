@@ -518,8 +518,8 @@ def display_about_content():
         c1, c2 = st.columns([7,13])
         c1.image(get_image_url("About/img.jpg"), use_container_width=True)
         c2.subheader("Dr. Gopal Kalwan")
-        c2.write("Centre for Biotechnology\
-                 \nMaharshi Dayanand University, Rohtak, HR, India\
+        c2.write("ICAR - Indian Agricultural Research Institute\
+                 \nNew Delhi, India\
                  \nㅤ")
         d0,d1,d2,d3,d4=c2.columns([1,5,1,5,1])
         d1.link_button("Profile",url="wwww.google.com",use_container_width=True)
@@ -1191,13 +1191,70 @@ def login_page():
             register_interface()
     return
 
-def home_page():
-    st.markdown("""<style>.stVerticalBlock.st-key-con2hp, .stVerticalBlock.st-key-con31hp, .stVerticalBlock.st-key-con32hp, .stVerticalBlock.st-key-con11hp, .stVerticalBlock.st-key-con12hp {background-color: rgba(255,119,75,1); padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-con2hp:hover, .stVerticalBlock.st-key-con31hp:hover, .stVerticalBlock.st-key-con32hp:hover, .stVerticalBlock.st-key-con11hp:hover, .stVerticalBlock.st-key-con12hp:hover {background-color: rgba(255,119,75,0.5); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);} .stVerticalBlock.st-key-rest1container, .stVerticalBlock.st-key-rest3container {background-color: #f4f4f9; padding: 30px; border-radius: 15px;}</style>""", unsafe_allow_html=True)
+def home_page():        
+    # Style specifically for navBrowse and navSNP buttons
+    st.markdown("""
+        <style>
+        [data-testid="stBaseButton-primary"] div[data-testid="stMarkdownContainer"] p {
+            font-size: 2.5rem !important;
+            margin: 0 !important;
+            line-height: 1.2 !important;
+        }
+        /* Container styling for proper centering */
+        [data-testid="stBaseButton-primary"] {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            min-height: 200px !important;
+            background-color: white !important;
+            transition: all 0.3s ease-in-out !important;
+        }
+        [data-testid="stBaseButton-primary"]:hover {
+            background-color: rgba(255,119,75,1) !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("""<style>
+    .stVerticalBlock.st-key-con2hp, .stVerticalBlock.st-key-con31hp, .stVerticalBlock.st-key-con32hp, .stVerticalBlock.st-key-con11hp, .stVerticalBlock.st-key-con12hp {
+        background-color: rgba(255,119,75,1); 
+        padding: 20px; 
+        border-radius: 10px; 
+        transition: all 0.3s ease-in-out;
+    } 
+    .stVerticalBlock.st-key-con03hp, .stVerticalBlock.st-key-con01hp, .stVerticalBlock.st-key-con02hp, .stVerticalBlock.st-key-con04hp {
+        background-color: #f4f4f9;
+        padding: 20px;
+        border-radius: 2rem;
+        border: 10px solid #ff774b;
+        transition: all 0.3s ease-in-out;
+    }
+    .stVerticalBlock.st-key-con2hp:hover, .stVerticalBlock.st-key-con31hp:hover, .stVerticalBlock.st-key-con32hp:hover, .stVerticalBlock.st-key-con11hp:hover, .stVerticalBlock.st-key-con12hp:hover, .stVerticalBlock.st-key-con03hp:hover, .stVerticalBlock.st-key-con01hp:hover, .stVerticalBlock.st-key-con04hp:hover, .stVerticalBlock.st-key-con02hp:hover {
+        background-color: rgba(255,119,75,0.5); 
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+        transform: translateY(-2px);
+    } 
+    .stVerticalBlock.st-key-rest1container, .stVerticalBlock.st-key-rest3container {
+        background-color: #f4f4f9; 
+        padding: 30px; 
+        border-radius: 15px;
+    }</style>""", unsafe_allow_html=True)
     #st.markdown("""<style>.block-container {padding-top: 6rem;padding-bottom: 2rem;padding-left: 1rem;padding-right: 1rem;}</style>""", unsafe_allow_html=True)
     col1,col2,col3=st.columns([1,2,1])
     with col1:
-        con=st.container(border=True,height=260)
-        con=st.container(border=True,height=260)
+        con=st.container(border=False, key="con01hp")
+        with con:
+            if st.button("BROWSE", use_container_width=True, key="navBrowse", type="primary"):
+                st.session_state["programmatic_nav"] = True
+                st.session_state["current_page"] = "GENE-INFO"
+                st.rerun()
+        con=st.container(border=False, key="con02hp")
+        with con:
+            if st.button("PRIMER DESIGN", use_container_width=True, key="navPrimer", type="primary"):
+                st.write("This feature is under development. Please check back later.")
+                #st.session_state["programmatic_nav"] = True
+                #st.session_state["current_page"] = "PRIMER"
+                #st.rerun()
     col2.markdown(''
         '<style>'
         '    /* General Styles */'
@@ -1265,8 +1322,19 @@ def home_page():
         '</div>'
         '', unsafe_allow_html=True)
     with col3:
-        con=st.container(border=True,height=260)
-        con=st.container(border=True,height=260)
+        con=st.container(border=False, key="con03hp")
+        with con:
+            if st.button("SNP-CALLING", use_container_width=True, key="navSNP", type="primary"):
+                st.session_state["programmatic_nav"] = True
+                st.session_state["current_page"] = "SNP-CALLING"
+                st.rerun()
+        con=st.container(border=False, key="con04hp")
+        with con:
+            if st.button("CRISPR DESIGN", use_container_width=True, key="navCRISPR", type="primary"):
+                st.write("This feature is under development. Please check back later.")
+                #st.session_state["programmatic_nav"] = True
+                #st.session_state["current_page"] = "CRISPR-DESIGN"
+                #st.rerun()
     #sub1
     con=st.container(border=False, key="rest1container")
     with con:
