@@ -996,3 +996,44 @@ def process_locid2(locid):
         return result
     else:
         return None
+
+
+def show_sequence_data_p(tid, is_multi=False):
+    """Display sequence data for a transcript ID."""
+    if not is_multi:
+        matching_row = df[df['Transcript id'] == tid]
+        if not matching_row.empty:
+            gene_code = format_sequence(matching_row['Genomic Sequence'].values[0])
+
+            # Display as code block with copy functionality
+            with st.expander("Genomic Sequence", expanded=True):
+                st.code(gene_code, language="text")
+
+            combined_file_content = (
+                f">{tid}|{tid} Genomic Sequence\n{gene_code}\n\n"
+            )
+            col1,col2,col3=st.columns([1,2,1])
+            with col2:
+                st.download_button(label="Download Sequence as .txt", data=combined_file_content, file_name=f"{tid}_sequence.txt", mime="text/plain", on_click="ignore",use_container_width=True)
+
+            return True
+        return False
+    else:
+        # For multi transcript IDs
+        for t_id in tid:
+            matching_rows = df[df['Transcript id'] == t_id]
+            if not matching_rows.empty:
+                gene_code = format_sequence(matching_rows['Genomic Sequence'].values[0])
+
+                with st.expander(f"{t_id} Genomic Sequence", expanded=True):
+                    st.code(gene_code, language="text")
+
+                combined_file_content = (
+                    f">{t_id}|{t_id} Genomic Sequence\n{gene_code}\n\n"
+                )
+                col1,col2,col3=st.columns([1,2,1])
+                with col2:
+                    st.download_button(label="Download Sequence as .txt", data=combined_file_content, file_name=f"{t_id}_sequence.txt", mime="text/plain", on_click="ignore",use_container_width=True)
+            else:
+                st.write(f"No matching data found for Gene ID: {t_id}\n")
+
