@@ -194,7 +194,8 @@ functions = {
     "SNP-CALLING": pg.snp_info_page,
     "ORTHOLOGS/PARALOGS": pg.orthologs_info_page,
     "ABOUT US": pg.about_page,
-    "LOGIN": pg.login_page
+    "LOGIN": pg.login_page,
+    "PRIMER": pg.primer_info_page,
 }
 
 go_to = functions.get(st.session_state.current_page)
