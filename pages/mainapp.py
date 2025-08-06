@@ -1251,10 +1251,9 @@ def home_page():
         con=st.container(border=False, key="con02hp")
         with con:
             if st.button("PRIMER DESIGN", use_container_width=True, key="navPrimer", type="primary"):
-                st.write("This feature is under development. Please check back later.")
-                #st.session_state["programmatic_nav"] = True
-                #st.session_state["current_page"] = "PRIMER"
-                #st.rerun()
+                st.session_state["programmatic_nav"] = True
+                st.session_state["current_page"] = "PRIMER"
+                st.rerun()
     col2.markdown(''
         '<style>'
         '    /* General Styles */'
