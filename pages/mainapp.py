@@ -1130,7 +1130,10 @@ def login_page():
     con=st.container(border=False)
     with con:
         col1,col2=st.columns([4,6])
-        col1.image("logo1.svg", use_container_width=True)
+        with open("logo1.png", "rb") as img_file:
+            img_data = img_file.read()
+        img_login=img_to_base64(img_data)
+        col1.image(f"data:image/png;base64,{img_login}", use_container_width=True)
         with col2:
             st.markdown("<h1 style='text-align: center;'>WELCOME</h1>", unsafe_allow_html=True)
             st.markdown("<h3 style='text-align: center;'>Log in to the CHICKPEA OMICS EXPLORER to explore the world of Chickpea Genomics and Proteomics</h3>", unsafe_allow_html=True)
