@@ -641,35 +641,35 @@ def transcriptid_info(tid):
 
             con=st.container(border=True)
             with con:
-                st.subheader("Protein Protein Interaction data")
+                st.subheader("Protein Protein Interaction")
                 show_protein_ppi_data(tid)
             
             con=st.container(border=True)
             with con:
-                st.subheader("Cellular-localization data")
+                st.subheader("Cellular-localization")
                 show_cellular_Localization(tid)
 
             con=st.container(border=True)
             with con:
-                st.subheader("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes Analysis data")
+                st.subheader("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes Analysis")
                 show_go_kegg_data(tid)
 
             con=st.container(border=True)
             with con:
-                st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas data")
+                st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas")
                 show_fpkm_matrix(tid)
 
             con=st.container(border=True)
             with con:
-                st.subheader("Single Nucleotide Polymorphism Calling data")
+                st.subheader("Single Nucleotide Polymorphism (SNP)")
                 show_snp_data(tid)
 
             con=st.container(border=True)
             with con:
-                st.subheader("RNA data")
+                st.subheader("RNA")
                 show_rna_data(tid)
 
-                st.subheader("lncRNA data")
+                st.subheader("lncRNA")
                 show_lncrna_data(tid)
 
                 st.subheader("miRNA Target")
@@ -710,34 +710,34 @@ def multi_transcriptid_info(mtid):
 
         con=st.container(border=True)
         with con:
-            st.subheader("Protein Protein Interaction data")
+            st.subheader("Protein Protein Interaction")
             show_protein_ppi_data(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("\nCellular-localization data")
+            st.subheader("\nCellular-localization")
             show_cellular_Localization(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("\nGene Ontology and Kyoto Encyclopedia of Genes and Genomes Analysis data")
+            st.subheader("\nGene Ontology and Kyoto Encyclopedia of Genes and Genomes Analysis")
             show_go_kegg_data(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas data")
+            st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas")
             show_fpkm_matrix(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("\nSingle Nucleotide Polymorphism Calling data")
+            st.subheader("\nSingle Nucleotide Polymorphism (SNP)")
             show_snp_data(found_ids, is_multi=True)
 
         con=st.container(border=True)
         with con:
-            st.subheader("RNA data")
+            st.subheader("RNA")
             show_rna_data(found_ids, is_multi=True)
-            st.subheader("lncRNA data")
+            st.subheader("lncRNA")
             show_lncrna_data(found_ids, is_multi=True)
             st.subheader("miRNA Target")
             show_mirna_data(found_ids, is_multi=True)
