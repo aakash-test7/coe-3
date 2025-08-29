@@ -168,7 +168,17 @@ def citations_page():
     con = st.container(border=True)
     con.write("### Orthologous analysis:")
     con.write("OrthoVenn3 (2022) - https://orthovenn3.bioinfotoolkits.net/") 
+    con.write("Jiahe Sun, Fang Lu, Yongjiang Luo, Lingzi Bie, Ling Xu, Yi Wang, OrthoVenn3: an integrated platform for exploring and visualizing orthologous data across genomes, Nucleic Acids Research, Volume 51, Issue W1, 5 July 2023, Pages W397-W403, https://doi.org/10.1093/nar/gkad313")
     con.write("Contact: yiwang28@swu.edu.cn")
+
+    con = st.container(border=True)
+    con.write("### Primer Design:")
+    con.write("Primer3 - https://primer3.org/")
+    con.write("""
+    <p>Untergasser A, Cutcutache I, Koressaar T, Ye J, Faircloth BC, Remm M and Rozen SG.<br>
+    Primer3--new capabilities and interfaces.<br>
+    Nucleic Acids Res. 2012 Aug 1;40(15):e115.</p>
+    """,unsafe_allow_html=True)
 
     con = st.container(border=True)
     con.write("### Sequences:")
