@@ -483,7 +483,7 @@ def display_about_content():
     col1, col2 = st.columns(2)
     
     # Container 1
-    st.markdown("""<style>.stVerticalBlock.st-key-au2, .stVerticalBlock.st-key-au1, .stVerticalBlock.st-key-au3, .stVerticalBlock.st-key-au4, .stVerticalBlock.st-key-au5, .stVerticalBlock.st-key-au6 {background-color: rgb(185, 214, 148); color: white; padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-au2:hover, .stVerticalBlock.st-key-au1:hover, .stVerticalBlock.st-key-au3:hover, .stVerticalBlock.st-key-au4:hover, .stVerticalBlock.st-key-au5:hover, .stVerticalBlock.st-key-au6:hover {background-color: rgba(242,240,239,0.5); color: black; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);}</style>""", unsafe_allow_html=True)
+    st.markdown("""<style>.stVerticalBlock.st-key-au2, .stVerticalBlock.st-key-au1, .stVerticalBlock.st-key-au3, .stVerticalBlock.st-key-au4, .stVerticalBlock.st-key-au5, .stVerticalBlock.st-key-au6 {background-color: rgb(196,91,17); color: white; padding: 20px; border-radius: 10px; transition: all 0.3s ease-in-out;} .stVerticalBlock.st-key-au2:hover, .stVerticalBlock.st-key-au1:hover, .stVerticalBlock.st-key-au3:hover, .stVerticalBlock.st-key-au4:hover, .stVerticalBlock.st-key-au5:hover, .stVerticalBlock.st-key-au6:hover {background-color: rgba(242,240,239,0.5); color: black; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); transform: translateY(-2px);}</style>""", unsafe_allow_html=True)
     con = col1.container(border=False, key="au1")
     with con:
         c1, c2 = st.columns([7,13])
@@ -1217,53 +1217,6 @@ def login_page():
     return
 
 def home_page():        
-    # Style specifically for navBrowse and navSNP buttons
-    st.markdown("""
-        <style>
-        [data-testid="stBaseButton-primary"] div[data-testid="stMarkdownContainer"] p {
-            font-size: 2.5rem !important;
-            margin: 0 !important;
-            line-height: 1.2 !important;
-        }
-        /* Container styling for proper centering */
-        [data-testid="stBaseButton-primary"] {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            min-height: 200px !important;
-            background-color: white !important;
-            transition: all 0.3s ease-in-out !important;
-        }
-        [data-testid="stBaseButton-primary"]:hover {
-            background-color: rgba(255,119,75,1) !important;
-        }
-        </style>
-    """, unsafe_allow_html=True)
-    
-    st.markdown("""<style>
-    .stVerticalBlock.st-key-con2hp, .stVerticalBlock.st-key-con31hp, .stVerticalBlock.st-key-con32hp, .stVerticalBlock.st-key-con11hp, .stVerticalBlock.st-key-con12hp {
-        background-color: rgba(255,119,75,1); 
-        padding: 20px; 
-        border-radius: 10px; 
-        transition: all 0.3s ease-in-out;
-    } 
-    .stVerticalBlock.st-key-con03hp, .stVerticalBlock.st-key-con01hp, .stVerticalBlock.st-key-con02hp, .stVerticalBlock.st-key-con04hp {
-        background-color: #f4f4f9;
-        padding: 20px;
-        border-radius: 2rem;
-        border: 10px solid #ff774b;
-        transition: all 0.3s ease-in-out;
-    }
-    .stVerticalBlock.st-key-con2hp:hover, .stVerticalBlock.st-key-con31hp:hover, .stVerticalBlock.st-key-con32hp:hover, .stVerticalBlock.st-key-con11hp:hover, .stVerticalBlock.st-key-con12hp:hover, .stVerticalBlock.st-key-con03hp:hover, .stVerticalBlock.st-key-con01hp:hover, .stVerticalBlock.st-key-con04hp:hover, .stVerticalBlock.st-key-con02hp:hover {
-        background-color: rgba(255,119,75,0.5); 
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
-        transform: translateY(-2px);
-    } 
-    .stVerticalBlock.st-key-rest1container, .stVerticalBlock.st-key-rest3container {
-        background-color: #f4f4f9; 
-        padding: 30px; 
-        border-radius: 15px;
-    }</style>""", unsafe_allow_html=True)
     #st.markdown("""<style>.block-container {padding-top: 6rem;padding-bottom: 2rem;padding-left: 1rem;padding-right: 1rem;}</style>""", unsafe_allow_html=True)
     col1,col2,col3=st.columns([1,2,1])
     with col1:
@@ -1286,17 +1239,21 @@ def home_page():
         '        font-family: Arial, sans-serif;'
         '        margin: 0;'
         '        padding: 0;'
-        '        color: #333;'
+        '        color: #f5d7be;'
         '    }'
         '    .hp-container {'
         '        max-width: 1000px;'
-        '        background-color: #f4f4f9;'
+        '        background-color: #833c0d;'
         '        margin: 0 auto;'
         '        padding: 20px;'
         '        border-radius: 2rem;'
-        '        border: 10px solid #ff774b;'
+        '        transition: all 0.3s ease-in-out !important;'
         '        box-shadow: 0 4px 8px rgba(0,0,0,0.1);'
         '    }'
+        ' .hp-container:hover {'
+        '    background-color: rgba(197,91,17,1) !important;'
+        '    transition: all 0.3s ease-in-out !important;'
+        '}'
         '    /* Paragraph Styles */'
         '    .hp-paragraph {'
         '        font-size: 1rem;'
@@ -1326,8 +1283,8 @@ def home_page():
         '<div class="hp-body">'
         '  <div class="hp-container">'
         '    <!-- Heading and Subheading -->'
-        '    <p style="text-align: center; font-size: 3rem; margin-bottom: 5px; color: #2c3e50; font-weight: bold;">ChickpeaOmicsExplorer</p>'
-        '    <p style="text-align: center; font-size: 1.2rem; color: #7f8c8d; margin-bottom: 10px; font-weight: bold;">CHICKPEA (<i>Cicer arietinum L.</i>) DATABASE</p>'
+        '    <p style="text-align: center; font-size: 3rem; margin-bottom: 5px; color: #fff; font-weight: bold;">ChickpeaOmicsExplorer</p>'
+        '    <p style="text-align: center; font-size: 1.2rem; color: #fff; margin-bottom: 10px; font-weight: bold;">CHICKPEA (<i>Cicer arietinum L.</i>) DATABASE</p>'
         '    <!-- Paragraph with List and Special Effects -->'
         '    <br><p class="hp-paragraph">'
         '      Chickpea (<i>Cicer arietinum L.</i>), a major legume valued for its high protein content and predominantly cultivated in arid and semi-arid regions. With the advent of high throughput sequencing technologies vast amount of genomic and transcriptomic data have been generated. To effectively utilize this wealth of information, we developed AI-driven platform, the “CHICKPEA OMICS EXPLORER”. This interactive database integrates multiple genomic resources including Phytozome, NCBI, CicerSeq and the chickpea transcriptome database. It offers comprehensive tools for spatial-temporal gene expression profiling, motif discovery, RNA coding potential analysis, protein interaction networks, pathway enrichment analysis, SNP detection, and ortholog identification. By consolidating diverse datasets and analysis, the Chickpea Omics Explorer serves as a powerful resourse for trait dissection, molecular breeding and functional genomics research in chickpea.'
@@ -1359,61 +1316,53 @@ def home_page():
                 #st.session_state["programmatic_nav"] = True
                 #st.session_state["current_page"] = "CRISPR-DESIGN"
                 #st.rerun()
-    #sub1
-    con=st.container(border=False, key="rest1container")
-    with con:
-        col1,col2=st.columns(2)
-        con=col1.container(border=True,key="con11hp")
-        with con:
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-        con=col2.container(border=True,key="con12hp")
-        with con:
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
+    # Style specifically for navBrowse and navSNP buttons
+    st.markdown("""
+    <style>
+    [data-testid="stBaseButton-primary"] div[data-testid="stMarkdownContainer"] p {
+        font-size: 2.5rem !important;
+        margin: 0 !important;
+        line-height: 1.2 !important;
+        color: #fff !important;  /* Font color */
+    }
 
-        con=st.container(border=True)
-        with con:
-            gallery_html()
+    /* Container styling for proper centering */
+    [data-testid="stBaseButton-primary"] {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 200px !important;
+        background-color: #833c0d !important;  /* Default background color */
+        transition: all 0.3s ease-in-out !important;
+    }
 
-    #sub3
-    con=st.container(border=False, key="rest3container")
-    with con:
-        con=st.container(border=True,key="con2hp")
-        with con:
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-
-        col1,col2=st.columns(2)
-        con=col1.container(border=True,key="con31hp")
-        with con:
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-        con=col2.container(border=True,key="con32hp")
-        with con:
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-            st.write(".")
-
+    [data-testid="stBaseButton-primary"]:hover {
+        background-color: rgba(197,91,17,1) !important;  /* Hover background color */
+    }
+    
+    .stVerticalBlock.st-key-con2hp, .stVerticalBlock.st-key-con31hp, .stVerticalBlock.st-key-con32hp, .stVerticalBlock.st-key-con11hp, .stVerticalBlock.st-key-con12hp {
+        background-color: rgba(197,91,17,1); 
+        padding: 20px; 
+        border-radius: 10px; 
+        transition: all 0.3s ease-in-out;
+    } 
+    .stVerticalBlock.st-key-con03hp, .stVerticalBlock.st-key-con01hp, .stVerticalBlock.st-key-con02hp, .stVerticalBlock.st-key-con04hp {
+        background-color: #833c0d;
+        padding: 20px;
+        border-radius: 2rem;
+        transition: all 0.3s ease-in-out;
+    }
+    .stVerticalBlock.st-key-con2hp:hover, .stVerticalBlock.st-key-con31hp:hover, .stVerticalBlock.st-key-con32hp:hover, .stVerticalBlock.st-key-con11hp:hover, .stVerticalBlock.st-key-con12hp:hover, .stVerticalBlock.st-key-con03hp:hover, .stVerticalBlock.st-key-con01hp:hover, .stVerticalBlock.st-key-con04hp:hover, .stVerticalBlock.st-key-con02hp:hover {
+        background-color: rgba(197,91,17,1); 
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+        outline: none;
+        transform: translateY(-2px);
+    } 
+    .stVerticalBlock.st-key-rest1container, .stVerticalBlock.st-key-rest3container {
+        background-color: rgb(197,91,17); 
+        padding: 30px; 
+        border-radius: 15px;
+    }</style>""", unsafe_allow_html=True)
     base_footer()
     return
 
