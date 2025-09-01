@@ -11,7 +11,7 @@ options={"use_padding": True, "show_menu":False}
 
 styles = {
     "nav": {
-        "background-color": "rgb(185, 214, 148)",  # Background color of the navigation bar
+        "background-color": "rgb(197, 91, 17)",  # Background color of the navigation bar
         "height": "4rem",  # Set the total height of the navigation bar
         "display": "flex",  # Use flexbox for layout
         "align-items": "center",  # Vertically center the items
@@ -19,17 +19,18 @@ styles = {
         "padding": "0 1rem",  # Add padding to the left and right of the navigation bar
         "overflow-x": "auto",  # Enable horizontal scrolling if the content overflows
         "white-space": "nowrap",  # Prevent items from wrapping to a new line
+        "text-color": "rgba(255,255,255,1)",
     },
     "div": {
         "width": "100%",
     },
     "span": {
         "border-radius": "0.5rem",  # Rounded corners for the headings
-        "color": "rgb(49, 51, 63)",  # Text color of the headings
         "margin": "0 0.125rem",  # Margin around each heading
         "padding": "0.4375rem 0.625rem",  # Padding inside each heading
         "font-size": "1.1rem",  # Increase the font size of the headings
         "font-weight": "bold",  # Make the headings bold
+        "color": "white",
     },
     "active": {
         "background-color": "rgba(255, 255, 255, 0.25)",  # Background color for the active heading
@@ -92,7 +93,7 @@ external_links = {
 st.sidebar.title("Important Resources")
 for name, link in external_links.items():
     st.sidebar.markdown(
-f'<a href="{link}" target="_blank" class="sidebar-button" style="text-decoration: none; background-color: rgb(255, 119, 75); color: black;" onmouseover="this.style.textDecoration=\'none\'; this.style.color=\'black\';" onmouseout="this.style.textDecoration=\'none\'; this.style.color=\'black\';">{name}</a>',
+f'<a href="{link}" target="_blank" class="sidebar-button" style="text-decoration: none; background-color: rgb(197,91,17); color: black;" onmouseover="this.style.textDecoration=\'none\'; this.style.color=\'black\';" onmouseout="this.style.textDecoration=\'none\'; this.style.color=\'black\';">{name}</a>',
         unsafe_allow_html=True)
     
 #visitor
@@ -153,13 +154,13 @@ st.markdown(
                 font-size: 0.9rem;      /* Slightly reduce font size for mobile */
             }
         }
-        .sidebar-button, .stButton>button {
+        .sidebar-button {
             width: 100%;
             padding: 10px;
             font-size: 16px;
-            color: black;
-            background-color: #C3D8A1; /* Green */
-            border: 2px solid #9CAD81;
+            color: white;
+            background-color: #833c0d; /* Dark Red */
+            border: 2px solid #5a2a09;
             border-radius: 15px;
             cursor: pointer;
             margin-bottom: 5px;
@@ -169,13 +170,33 @@ st.markdown(
             transition: all 0.3 ease;
         }
 
-        .sidebar-button:hover, .stButton>button:hover {
-            background-color: rgb(255, 119, 75);
-            border-color: #2d2d2d;
+        .sidebar-button:hover {
+            background-color: rgb(197,91,17);
+            border-color: #c97b4b;
         }
 
         .stButton>button:hover p {
-            color: black !important; /* Keep text visible */
+            color: white !important; /* Keep text visible */
+        }
+        .stButton>button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #833c0d; /* Dark Red */
+            border: 0px solid #5a2a09;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3 ease;
+        }
+
+        .stButton>button:hover {
+            background-color: rgb(197,91,17);
+            border-color: #c97b4b;
         }
     </style>
     """,
