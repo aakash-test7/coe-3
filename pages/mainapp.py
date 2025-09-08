@@ -155,7 +155,7 @@ def base_footer():
             </div>
         </div>
         <div class="footer-2">
-            <p style="font-size: 15px">CicerOmicsExplorer</p>
+            <p style="font-size: 15px">Chickpea Omics Explorer</p>
         </div>
     </div>
     """
@@ -564,17 +564,18 @@ def display_about_content():
 
 def about_page():
     if 'active_tab' not in st.session_state:
-        st.session_state.active_tab = 'ABOUT-US'
+        st.session_state.active_tab = 'STATISTICS'
     
     def set_active_tab(tab_name):
         st.session_state.active_tab = tab_name
     
     # Create columns for buttons
     st.write(" ")
-    col1, col2, col3, col4, col5 = st.columns(5)
-    if col1.button("ABOUT US", key="btn_about",use_container_width=True):
-        set_active_tab('ABOUT-US')
-        st.rerun()
+    #col1, col2, col3, col4, col5 = st.columns(5)
+    col2,col3,col4,col5=st.columns(4)
+    #if col1.button("ABOUT US", key="btn_about",use_container_width=True):
+    #    set_active_tab('ABOUT-US')
+    #    st.rerun()
     if col2.button("STATISTICS", key="btn_meta",use_container_width=True):
         set_active_tab('STATISTICS')
         st.rerun()
@@ -1283,11 +1284,11 @@ def home_page():
         '<div class="hp-body">'
         '  <div class="hp-container">'
         '    <!-- Heading and Subheading -->'
-        '    <p style="text-align: center; font-size: 3rem; margin-bottom: 5px; color: #fff; font-weight: bold;">ChickpeaOmicsExplorer</p>'
-        '    <p style="text-align: center; font-size: 1.2rem; color: #fff; margin-bottom: 10px; font-weight: bold;">CHICKPEA (<i>Cicer arietinum L.</i>) DATABASE</p>'
+        '    <p style="text-align: center; font-size: 3rem; margin-bottom: 5px; color: #fff; font-weight: bold;">Chickpea Omics Explorer</p>'
+        '    <p style="text-align: center; font-size: 1.2rem; color: #fff; margin-bottom: 10px; font-weight: bold;">CHICKPEA (<i>Cicer arietinum</i> L.) DATABASE</p>'
         '    <!-- Paragraph with List and Special Effects -->'
         '    <br><p class="hp-paragraph">'
-        '      Chickpea (<i>Cicer arietinum L.</i>), a major legume valued for its high protein content and predominantly cultivated in arid and semi-arid regions. With the advent of high throughput sequencing technologies vast amount of genomic and transcriptomic data have been generated. To effectively utilize this wealth of information, we developed AI-driven platform, the “CHICKPEA OMICS EXPLORER”. This interactive database integrates multiple genomic resources including Phytozome, NCBI, CicerSeq and the chickpea transcriptome database. It offers comprehensive tools for spatial-temporal gene expression profiling, motif discovery, RNA coding potential analysis, protein interaction networks, pathway enrichment analysis, SNP detection, and ortholog identification. By consolidating diverse datasets and analysis, the Chickpea Omics Explorer serves as a powerful resourse for trait dissection, molecular breeding and functional genomics research in chickpea.'
+        '      Chickpea (<i>Cicer arietinum</i> L.), a major legume valued for its high protein content and predominantly cultivated in arid and semi-arid regions. With the advent of high throughput sequencing technologies vast amount of genomic and transcriptomic data have been generated. To effectively utilize this wealth of information, we developed AI-driven platform, the “CHICKPEA OMICS EXPLORER”. This interactive database integrates multiple genomic resources including Phytozome, NCBI, CicerSeq and the chickpea transcriptome database. It offers comprehensive tools for spatial-temporal gene expression profiling, motif discovery, RNA coding potential analysis, protein interaction networks, pathway enrichment analysis, SNP detection, and ortholog identification. By consolidating diverse datasets and analysis, the Chickpea Omics Explorer serves as a powerful resourse for trait dissection, molecular breeding and functional genomics research in chickpea.'
         '    </p>'
         '    <ul class="hp-list">'
         '    </ul>'
