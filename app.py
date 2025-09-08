@@ -90,13 +90,6 @@ external_links = {
     "SoyBase": "https://www.soybase.org/",
     "Cassavabase": "https://www.cassavabase.org"}
 
-st.markdown("""
-    <style>
-    .stSidebar { 
-        background-color: #e6c4aeff;
-    }
-    </style>
-""", unsafe_allow_html=True)
 from backend import img_to_base64
 #st.sidebar.image("logo1.png", use_column_width=True)
 with open("logo1.png", "rb") as img_file:
@@ -167,6 +160,9 @@ st.markdown(
                 font-size: 0.9rem;      /* Slightly reduce font size for mobile */
             }
         }
+        .stSidebar {
+        background-color: #e6c4aeff;
+    }
         .sidebar-button {
             width: 100%;
             padding: 10px;
