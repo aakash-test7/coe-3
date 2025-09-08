@@ -205,7 +205,7 @@ from backend import process_locid, process_mlocid, df, show_rna_data, show_lncrn
 
 def rna_type_page():
     st.title("RNA type Search")
-    st.write("**Give details about the coding potential of RNA (mRNA or LncRNA)**")
+    st.write("**It gives details about the coding potential of RNA (mRNA or LncRNA)**")
     col1, col2 = st.columns(2)
 
     with col1:
@@ -418,7 +418,7 @@ from backend import process_locid, process_mlocid, df, show_fpkm_matrix, mlocid_
 def spatial_info_page():
 
     st.title("Spatial Expression Search")
-    st.write("**Provide the information about the temporal expression among 32 different developmental stages**")
+    st.write("**It provides the information about the temporal expression among 32 different developmental stages**")
 
     col1, col2 = st.columns(2)
 
@@ -458,7 +458,7 @@ def spatial_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas")
+                        st.subheader("Fragments per kilobase of Exon per million mapped fragments Matrix Atlas")
                         show_fpkm_matrix(tid)
                 else:
                     st.error(f"No match found for Gene ID: {tid}")
@@ -478,7 +478,7 @@ def spatial_info_page():
                 if not matching_rows.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas")
+                        st.subheader("Fragments per kilobase of Exon per million mapped fragments Matrix Atlas")
                         show_fpkm_matrix(mtid_list, is_multi=True)
                 if not_found_ids:
                     st.error(f"No matches found for Gene IDs: {', '.join(not_found_ids)}")
@@ -493,7 +493,7 @@ def spatial_info_page():
                 if not matching_row.empty:
                     con = st.container(border=True)
                     with con:
-                        st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas")
+                        st.subheader("Fragments per kilobase of Exon per million mapped fragments Matrix Atlas")
                         show_fpkm_matrix(tid)
                 else:
                     st.error(f"No match found for NCBI ID: {locid}")
@@ -511,7 +511,7 @@ def spatial_info_page():
                     if not matching_rows.empty:
                         con = st.container(border=True)
                         with con:
-                            st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas")
+                            st.subheader("Fragments per kilobase of Exon per million mapped fragments Matrix Atlas")
                             show_fpkm_matrix(mtid_list, is_multi=True)
                 st.toast("Task completed successfully.")
 
@@ -641,7 +641,7 @@ from backend import process_locid, process_mlocid, df, show_go_kegg_data, mlocid
 
 def go_info_page():
     st.title("Gene Ontology and Kyoto Encyclopedia of Genes and Genomes Analysis")
-    st.write("**Give the details about the gene functions and their involvement in various molecular pathways**")
+    st.write("**It gives details about the gene functions and their involvement in various molecular pathways**")
     col1, col2 = st.columns(2)
     with col1:
         c1 = st.container(border=True)
@@ -733,7 +733,7 @@ from backend import process_locid, process_mlocid, show_sequence_data,df, show_b
 
 def gene_info_page():
     st.title("Gene Information Search")
-    st.write("**Give detailed insights about each Genomic Sequence, RNA Sequence, CDS Sequence, Promoter Sequences, Peptide Sequence and biochemical properties of each protein**")
+    st.write("**It gives detailed insights about each Genomic Sequence, RNA Sequence, CDS Sequence, Promoter Sequences, Peptide Sequence and biochemical properties of each protein.**")
     col1, col2 = st.columns(2)
 
     with col1:
@@ -942,7 +942,7 @@ def local_info_page():
 
 def primer_info_page():
     st.title("PRIMER Design and Information")
-    st.write("**primer design description**")
+    st.write("""<p><b>Enter the Gene ID or NCBI ID to fetch the target sequence and then paste the nucleotide sequence in the Primer design Template section and get the set of primers just clicking Pick primers.</b></p>,""", unsafe_allow_html=True)
     col1, col2 = st.columns(2)
 
     with col1:
