@@ -6,7 +6,7 @@ import time
 from pages.mainapp import basic_stats, update_visitor_count
 
 pages = ["HOME", "SEARCH", "SPATIAL-EXPRESSION", "RNA", "miRNA-Target", "PPI", "LOCALIZATION", "GO-KEGG", "ORTHOLOGS/PARALOGS", "ABOUT US", "LOGIN"]
-logo_path = ("Logo5.svg")
+logo_path = ("logo1.svg")
 options={"use_padding": True, "show_menu":False}
 
 styles = {
