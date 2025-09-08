@@ -12,7 +12,7 @@ from streamlit.components.v1 import html
 # ✅ Cache image fetching and base64 conversion
 @st.cache_data(show_spinner=False)
 def get_footer_image_base64():
-    file_url = generate_signed_url('Logos/mdu.png')
+    file_url = generate_signed_url('Logos/mdulogo.png')
     response = requests.get(file_url)
     return img_to_base64(response.content)
 
@@ -145,8 +145,7 @@ def base_footer():
                 <p><br><br><br>Stress Physiology & Molecular Biology Lab,<br>
                 Centre for Biotechnology,<br>
                 Maharshi Dayanand University,<br> Rohtak, HR, INDIA<br>
-                E-mail: <a href="mailto:ssgill14@mdurohtak.ac.in" style="text-decoration: none;">ssgill14@mdurohtak.ac.in</a><br>
-                E-mail: <a href="mailto:kduiet@mdurohtak.ac.in" style="text-decoration: none;">kduiet@mdurohtak.ac.in</a>
+                E-mail: <a href="mailto:ssgill14@mdurohtak.ac.in" style="text-decoration: none;">ssgill14@mdurohtak.ac.in</a>; <a href="mailto:kduiet@mdurohtak.ac.in" style="text-decoration: none;">kduiet@mdurohtak.ac.in</a>
                 </p>
             </div>
             <div class="col-3">
@@ -322,7 +321,7 @@ def glossary_page():
         '30DAP - Seed 30 Days After Pollination': '- The developmental stage of seed thirty days after pollination.',
         'GO - Gene Ontology': '- a framework for the model of biology that describes gene functions in a species-independent manner.',
         'KEGG - Kyoto Encyclopedia of Genes and Genomes': '- a database resource for understanding high-level functions and utilities of biological systems.',
-        'FPKM - Fragments Per Kilobase of transcript per Million mapped reads': '- a normalized method for counting RNA-seq reads.',
+        'FPKM - Fragments per kilobase of transcript per million mapped reads': '- a normalized method for counting RNA-seq reads.',
         'miRNA - MicroRNA': '- small non-coding RNA molecules that regulate gene expression by binding to complementary sequences on target mRNA.',
         'lncRNA - Long Non-Coding RNA': '- a type of RNA molecule that is greater than 200 nucleotides in length but does not encode proteins.',
         'ST - Seed Tissue': '- the tissue in seeds that supports the development of the embryo and storage of nutrients.',
@@ -1306,7 +1305,7 @@ def home_page():
     with col3:
         con=st.container(border=False, key="con03hp")
         with con:
-            if st.button("SNP-CALLING", use_container_width=True, key="navSNP", type="primary"):
+            if st.button("SNP CALLING", use_container_width=True, key="navSNP", type="primary"):
                 st.session_state["programmatic_nav"] = True
                 st.session_state["current_page"] = "SNP-CALLING"
                 st.rerun()
@@ -1371,7 +1370,10 @@ def search_page():
     if st.session_state.get('authenticated', False):
         username = st.session_state.get('username')
     st.title("Search")
-    st.write("**Begin the search by interacting with the backend process.**")
+    st.write("""<p><b>Enter single Gene ID/NCBI ID or multiple Gene IDs in the Chick Pea Omics Explorer. The search is case sensitive.<br>
+Search Example:<br>
+Entering Ca_00001 - will provide the information like Genomic sequence, Transcript sequence, CDS, Peptide sequence, Promoter sequence, Biochemical properties, Protein-protein interaction, cellular localization, Gene Ontology and Kyoto encyclopedia of genes and genomes analysis, Single nucleotide polymorphism calling, lnc RNA, miRNA targets, Orthologs/Paralogs and Protein model prediction
+</b></p>""", unsafe_allow_html=True)
     col1, col2 = st.columns(2)
 
     with col1:
