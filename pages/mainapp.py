@@ -144,7 +144,7 @@ def base_footer():
             <div class="col-1">
                 <p><br><br><br>Stress Physiology & Molecular Biology Lab,<br>
                 Centre for Biotechnology,<br>
-                Maharshi Dayanand University,<br> Rohtak, HR, INDIA<br>
+                Maharshi Dayanand University,<br> Rohtak - 124001, Haryana, INDIA<br>
                 E-mail: <a href="mailto:ssgill14@mdurohtak.ac.in" style="text-decoration: none;">ssgill14@mdurohtak.ac.in</a>; <a href="mailto:kduiet@mdurohtak.ac.in" style="text-decoration: none;">kduiet@mdurohtak.ac.in</a>
                 </p>
             </div>
