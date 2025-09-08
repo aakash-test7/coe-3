@@ -96,10 +96,12 @@ with open("logo1.png", "rb") as img_file:
         img_data = img_file.read()
 img_sidebar=img_to_base64(img_data)
 st.sidebar.image(f"data:image/png;base64,{img_sidebar}", use_container_width=True)
-st.sidebar.title("Important Resources")
+st.sidebar.markdown("""
+    <h3 style="text-align: center; font-size: 1.25rem;">Important Resources</h3>
+""", unsafe_allow_html=True)
 for name, link in external_links.items():
     st.sidebar.markdown(
-f'<a href="{link}" target="_blank" class="sidebar-button" style="text-decoration: none; background-color: rgb(197,91,17); color: black;" onmouseover="this.style.textDecoration=\'none\'; this.style.color=\'black\';" onmouseout="this.style.textDecoration=\'none\'; this.style.color=\'black\';">{name}</a>',
+f'<a href="{link}" target="_blank" class="sidebar-button" style="text-decoration: none; background-color: rgb(197,91,17); color: black; font-weight: bold;" onmouseover="this.style.textDecoration=\'none\'; this.style.color=\'black\';" onmouseout="this.style.textDecoration=\'none\'; this.style.color=\'black\';">{name}</a>',
         unsafe_allow_html=True)
     
 #visitor
@@ -206,6 +208,13 @@ st.markdown(
         .stButton>button:hover {
             background-color: rgb(197,91,17);
             border-color: #c97b4b;
+        }
+        .stTextInput input{
+            color: white !important;
+        }
+        
+        .stTextInput input::placeholder {
+            color: lightgray !important;
         }
     </style>
     """,
