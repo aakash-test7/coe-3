@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config(page_title="CicerOmicsExplorer", layout="wide",initial_sidebar_state="expanded")
+st.set_page_config(page_title="ChickpeaOmicsExplorer", layout="wide",initial_sidebar_state="expanded")
 from streamlit_navigation_bar import st_navbar
 import pages as pg
 import time
@@ -90,6 +90,12 @@ external_links = {
     "SoyBase": "https://www.soybase.org/",
     "Cassavabase": "https://www.cassavabase.org"}
 
+from backend import img_to_base64
+#st.sidebar.image("logo1.png", use_column_width=True)
+with open("logo1.png", "rb") as img_file:
+        img_data = img_file.read()
+img_sidebar=img_to_base64(img_data)
+st.sidebar.image(f"data:image/png;base64,{img_sidebar}", use_container_width=True)
 st.sidebar.title("Important Resources")
 for name, link in external_links.items():
     st.sidebar.markdown(
