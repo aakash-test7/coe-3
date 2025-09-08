@@ -6,7 +6,7 @@ import time
 from pages.mainapp import basic_stats, update_visitor_count
 
 pages = ["HOME", "SEARCH", "SPATIAL-EXPRESSION", "RNA", "miRNA-Target", "PPI", "LOCALIZATION", "GO-KEGG", "ORTHOLOGS/PARALOGS", "ABOUT US", "LOGIN"]
-logo_path = ("logo1.svg")
+logo_path = ("Logo5.svg")
 options={"use_padding": True, "show_menu":False}
 
 styles = {
@@ -90,6 +90,13 @@ external_links = {
     "SoyBase": "https://www.soybase.org/",
     "Cassavabase": "https://www.cassavabase.org"}
 
+st.markdown("""
+    <style>
+    .stSidebar { 
+        background-color: #e6c4aeff;
+    }
+    </style>
+""", unsafe_allow_html=True)
 from backend import img_to_base64
 #st.sidebar.image("logo1.png", use_column_width=True)
 with open("logo1.png", "rb") as img_file:
