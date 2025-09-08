@@ -656,7 +656,7 @@ def transcriptid_info(tid):
 
             con=st.container(border=True)
             with con:
-                st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas")
+                st.subheader("Fragments per kilobase of Exon per million mapped fragments Matrix Atlas")
                 show_fpkm_matrix(tid)
 
             con=st.container(border=True)
@@ -725,7 +725,7 @@ def multi_transcriptid_info(mtid):
 
         con=st.container(border=True)
         with con:
-            st.subheader("Fragments Per Kilobase of Exon Per Million mapped fragments Matrix Atlas")
+            st.subheader("Fragments per kilobase of Exon per million mapped fragments Matrix Atlas")
             show_fpkm_matrix(found_ids, is_multi=True)
 
         con=st.container(border=True)
