@@ -409,7 +409,7 @@ def meta_data_page():
 
 
 # ✅ Cache the video URL generation to avoid repeated calls
-@st.cache_data(show_spinner=False)
+#@st.cache_data(show_spinner=False)
 def get_video_url(video_path):
     return generate_signed_url(video_path)
 
